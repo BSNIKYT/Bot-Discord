@@ -5,7 +5,9 @@
 1. [Вступление](https://github.com/abova29/discriminant#Встуление)
 2. [Как установить](https://github.com/abova29/discriminant#Как-установить)
 3. [Как обновить](https://github.com/abova29/discriminant#Как-обновить)
-4. [Благодарности](https://github.com/abova29/discriminant#Благодарности)
+4. [Как обновить](https://github.com/abova29/discriminant#Как-обновить)
+5. [Благодарности](https://github.com/abova29/discriminant#Благодарности)
+
 
 ## Вступление
 
