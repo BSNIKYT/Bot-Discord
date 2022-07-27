@@ -26,8 +26,19 @@
 [импорты]
 import discord ( pip install discord)
 
+[События]
+@bot.event
+...
+
+[Команды]
+@bot.comand()
+...
 
 
+
+
+[запуск бота]
+bot.run(ТОКЕН БОТА)
 ```
 
 
