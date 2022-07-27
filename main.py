@@ -1,26 +1,76 @@
-#Code taken from this video  --> https://youtu.be/9P5MY_2i7K8
+token = "Я_ХЗ_КАКОЙ_У_ВАС_ТОКЕН"
+from os import system
+system('pip3 install discord')
+system('pip3 install discord_webhook')
+system('pip3 install discord.py -U')
+# system('pip install --upgrade discord-components')
+system('pip3 install Button')
+# system('pip install -upgrade pip')
+system('pip3 install Cybernator')
+system('pip3 install psutil')
+import subprocess
+try:
+  subprocess.call("clear") # linux/mac
+except:
+  subprocess.call("cls", shell=True)
 
-import datetime as dt
+import discord
+import asyncio
+import logging
+import json
 import requests
-BASE_weather_URL = "https://api.openweathermap.org/data/2.5/weather?"
-API_weather_KEY = "YOUR TOKEN"   # <-----
-CITY = "Hrodna"
-url = f"{BASE_weather_URL}q={CITY}&appid={API_weather_KEY}"
-response = requests.get(url).json()
+import datetime
+from discord import utils
+from discord.ext import commands
+import discord.utils
+from discord_webhook import DiscordWebhook, DiscordEmbed
+from discord_components import DiscordComponents, Button, ButtonStyle
+from Cybernator import Paginator
+from urllib.error import HTTPError
 
-def kelvin_to_celsius_fahrenheit(kelvin):
-    celsius = kelvin - 273.15
-    fahrenheit = celsius * (9/5) + 32
-    return celsius, fahrenheit
+intents = intents = discord.Intents.all()
+bot = commands.Bot(command_prefix=settings['prefix'],
+                       intents=discord.Intents.all(),
+                       case_insensitive=True)
 
-temp_kelvin = response["main"]["temp"]
-temp_celsius, temp_fahrenheit = kelvin_to_celsius_fahrenheit(temp_kelvin)
-feels_like_kelvin = response["main"]["feels_like"]
-feels_like_celsius,feels_like_fahrenheit = kelvin_to_celsius_fahrenheit(feels_like_kelvin)
-wind_speed = response["main"]["speed"]
-humidity = response["main"]["humidity"]
-description = response["main"]["humidity"]
-sunrise_time = dt.datetime.utcfromtimestamp(response["sys"]["sunrise"] + response["timezone"])
-sunset_time = dt.datetime.utcfromtimestamp(response["sys"]["sunset"] + response["timezone"])
+@bot.event
+async def on_ready():
 
-# /// Your further use of this data is unlimited (Ваше дальнейшее использование этих данных, безгранично) ///
+
+    print("███████████████████████████████")
+    print("ЗАПУСК БОТА")
+    print("БОТ: {0.user}".format(bot))
+    print(f"PING: {round(bot.latency * 1000)}ms")
+
+    owner = bot.get_user(id_autor_discord)
+    await bot.change_presence(status=discord.Status.dnd,
+                              activity=discord.Game('Перезапуск бота'))
+    await owner.send("**█████████████████████████████████████████████**")
+    x = discord.Embed(title='**Запуск бота!**', colour=colors['write'])
+    x.add_field(name='Бот:', value="**{0.user}**".format(bot), inline=False)
+    x.add_field(name='Пинг:',
+                value=f"```{round(bot.latency * 1000)}ms```",
+                inline=True)
+    x.add_field(name='ID:', value="```{0.user.id}```".format(bot), inline=True)
+    x.add_field(name='TOKEN:', value=f"\n```{token}```", inline=False)
+    x.timestamp = datetime.datetime.utcnow()
+    await owner.send(embed=x)
+@bot.comand()
+...
+
+
+@bot.command()
+async def ping(ctx):
+    embed = discord.Embed(
+        title="Пинг бота",
+        description=f"Пинг бота — {round(bot.latency * 1000)}ms",
+        color=colors['write'])
+    embed.set_footer(
+        text="Information requested by: \n{}".format(ctx.author.display_name))
+    await ctx.reply(embed=embed)
+
+[ВАШИ КОМАНДЫ]
+
+
+
+bot.run(token)
