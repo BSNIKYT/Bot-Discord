@@ -4,7 +4,7 @@
 ## Содержание
 1. [Вступление](https://github.com/abova29/Bot-Discord#Встуление)
 2. [Как установить](https://github.com/abova29/Bot-Discord#Как-установить)
-3. [Как он может быть создан]
+3. [Как он может быть создан](https://github.com/BSNIKYT/Bot-Discord/blob/main/README.md#%D0%BA%D0%B0%D0%BA-%D0%BE%D0%BD-%D0%BC%D0%BE%D0%B6%D0%B5%D1%82-%D0%B1%D1%8B%D1%82%D1%8C-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD)
 4. [Как обновить](https://github.com/abova29/Bot-Discord#Как-обновить)
 5. [Благодарности](https://github.com/abova29/Bot-Discord#Благодарности)
 
